@@ -1,6 +1,5 @@
 {
-  pkgs ? import <textapp-pkgs> {},
-  version ? "0.1"
+  pkgs ? import <textapp-pkgs> {}
 }:
 with pkgs;
 let pythonEnv = python.withPackages (ps: [
@@ -8,8 +7,7 @@ let pythonEnv = python.withPackages (ps: [
     ]);
 in
 mkShell rec {
-  name = "pyexbase-${version}";
-  inherit version;
+  name = "pyexbase-dev";
 
   nativeBuildInputs = [ cmake ];
   buildInputs = [
