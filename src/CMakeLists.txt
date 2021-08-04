@@ -5,4 +5,6 @@ add_library(pyexbase SHARED
 
 target_link_libraries(pyexbase PUBLIC
   pybind11::pybind11
+  Boost::boost
+  Boost::locale
   )

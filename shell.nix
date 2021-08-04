@@ -4,6 +4,7 @@
 with pkgs;
 let pythonEnv = python.withPackages (ps: [
       ps.pybind11
+      ps.setuptools
     ]);
 in
 mkShell rec {
@@ -12,5 +13,7 @@ mkShell rec {
   nativeBuildInputs = [ cmake ];
   buildInputs = [
     pythonEnv
+    boost
+    icu
   ];
 }

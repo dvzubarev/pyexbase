@@ -1,5 +1,3 @@
-# Copyright (c) Facebook, Inc. and its affiliates.
-#
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
@@ -51,7 +49,7 @@ setup(
     name='libpyexbase',
     version='0.1',
     description='Bindings for textapp core functions',
-    url='http://ids.isa.ru:8083/git/pyexbase',
+    url='http://ids.isa.ru:8083/git/textapp/pyexbase',
     author='dvzubarev',
     author_email='zubarev@isa.ru',
     license='MIT',
