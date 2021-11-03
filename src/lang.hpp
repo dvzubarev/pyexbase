@@ -22,7 +22,7 @@ inline lang_id_t lang_of_letter (boost::locale::utf::code_point cp){
 }
 
 lang_id_t lang_of_word (const std::string& s){
-    std::array<unsigned, static_cast<unsigned>(lang_id_t::UNDEFINED)> ls;
+    std::array<unsigned, static_cast<unsigned>(lang_id_t::UNDEFINED)+1> ls;
 
     typedef boost::u8_to_u32_iterator<std::string::const_iterator> iter_t;
 
