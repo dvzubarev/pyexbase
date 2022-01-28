@@ -35,12 +35,12 @@
         "rev": "376f13b8e54d291ba4ba73cf94edb766ae411414",
         "revCount": 92,
         "type": "git",
-        "url": "ssh://git@ids/textapp/textapp-pkgs"
+        "url": "ssh://git@tsa04.isa.ru/textapp/textapp-pkgs"
       },
       "original": {
         "ref": "flakes",
         "type": "git",
-        "url": "ssh://git@ids/textapp/textapp-pkgs"
+        "url": "ssh://git@tsa04.isa.ru/textapp/textapp-pkgs"
       }
     }
   },

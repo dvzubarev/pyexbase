@@ -1,7 +1,7 @@
 {
   description = "Python bindings for common C++ functions";
 
-  inputs.textapp-pkgs.url = "git+ssh://git@ids/textapp/textapp-pkgs?ref=flakes";
+  inputs.textapp-pkgs.url = "git+ssh://git@tsa04.isa.ru/textapp/textapp-pkgs?ref=flakes";
   inputs.nixpkgs.follows = "textapp-pkgs/nixpkgs";
 
   outputs = { self, nixpkgs, textapp-pkgs }:
@@ -15,6 +15,7 @@
       overlay = final: prev: {
         python = textapp-pkgs.lib.overridePython python-overlay final prev;
       };
+      defaultPackage.x86_64-linux = pkgs.python.pkgs.pyexbase;
       packages.x86_64-linux = {
         inherit (pkgs)
           python;
