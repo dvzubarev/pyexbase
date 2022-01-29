@@ -47,7 +47,7 @@ class CMakeBuild(_build_ext):
 
 setup(
     name='libpyexbase',
-    # version='0.1',
+    version=os.environ.get('version', '0'),
     description='Bindings for textapp core functions',
     url='http://ids.isa.ru:8083/git/textapp/pyexbase',
     author='dvzubarev',
