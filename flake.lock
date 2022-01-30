@@ -17,10 +17,6 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": [
-          "textapp-pkgs",
-          "nixpkgs"
-        ],
         "textapp-pkgs": "textapp-pkgs"
       }
     },

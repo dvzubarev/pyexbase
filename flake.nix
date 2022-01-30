@@ -2,11 +2,10 @@
   description = "Python bindings for common C++ functions";
 
   inputs.textapp-pkgs.url = "git+ssh://git@tsa04.isa.ru/textapp/textapp-pkgs?ref=flakes";
-  inputs.nixpkgs.follows = "textapp-pkgs/nixpkgs";
 
-  outputs = { self, nixpkgs, textapp-pkgs }:
+  outputs = { self, textapp-pkgs }:
     let
-      pkgs = import nixpkgs {
+      pkgs = import textapp-pkgs.inputs.nixpkgs {
           system = "x86_64-linux";
           overlays = [ textapp-pkgs.overlay self.overlay ];
         };
