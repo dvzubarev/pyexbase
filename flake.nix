@@ -1,7 +1,7 @@
 {
   description = "Python bindings for common C++ functions";
 
-  inputs.textapp-pkgs.url = "git+ssh://git@tsa04.isa.ru/textapp/textapp-pkgs?ref=flakes";
+  inputs.textapp-pkgs.url = "git+ssh://git@tsa04.isa.ru/textapp/textapp-pkgs";
 
   outputs = { self, textapp-pkgs }:
     let
