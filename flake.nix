@@ -7,20 +7,17 @@
     let
       pkgs = import textapp-pkgs.inputs.nixpkgs {
           system = "x86_64-linux";
-          overlays = [ textapp-pkgs.overlay self.overlay ];
-        };
+          overlays = [ textapp-pkgs.overlays.default self.overlays.default ];
+      };
       python-overlay = pyfinal: pyprev: {pyexbase = pyfinal.callPackage ./nix {src=self;};};
+      tlib = textapp-pkgs.lib;
     in {
-      overlay = final: prev: {
-        python = textapp-pkgs.lib.overridePython python-overlay final prev;
-      };
-      defaultPackage.x86_64-linux = pkgs.python.pkgs.pyexbase;
-      packages.x86_64-linux = {
-        inherit (pkgs)
-          python;
+      overlays.default = final: prev: tlib.overrideAllPyVersions python-overlay prev;
 
-      };
-      devShell.x86_64-linux =
+      packages.x86_64-linux = tlib.allPyVersionsAttrSet {final-pkgs=pkgs;
+                                                         default="pyexbase";};
+
+      devShells.x86_64-linux.default =
         pkgs.mkShell {
           inputsFrom = [ pkgs.python.pkgs.pyexbase ];
           buildInputs = [pkgs.ccls];
