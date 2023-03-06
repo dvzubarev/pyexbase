@@ -8,6 +8,7 @@
       pkgs = import textapp-pkgs.inputs.nixpkgs {
           system = "x86_64-linux";
           overlays = [ textapp-pkgs.overlays.default self.overlays.default ];
+          config = textapp-pkgs.passthru.pkgs-config;
       };
       python-overlay = pyfinal: pyprev: {pyexbase = pyfinal.callPackage ./nix {src=self;};};
       tlib = textapp-pkgs.lib;

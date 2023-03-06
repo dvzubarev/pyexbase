@@ -1,5 +1,6 @@
 #include <cstdint>
 #include <array>
+#include <algorithm>
 
 #include <boost/locale/utf.hpp>
 #include <boost/regex/pending/unicode_iterator.hpp>
